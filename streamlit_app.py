@@ -75,7 +75,7 @@ with st.sidebar:
 
             if choice == "Missing Skills in the Resume":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=MISSING_SKILLS
                 )
@@ -83,7 +83,7 @@ with st.sidebar:
 
             if choice == "Grammatical error in the Resume":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=GRAMMAR_MISTAKES
                 )
@@ -91,7 +91,7 @@ with st.sidebar:
 
             if choice == "Online Courses":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=ONLINE_COURSES
                 )
@@ -99,7 +99,7 @@ with st.sidebar:
 
             if choice == "Salary Prediction":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=SALARY
                 )
@@ -107,7 +107,7 @@ with st.sidebar:
 
             if choice == "Future Opportunities":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=CAREER_ADVICE
                 )
@@ -116,7 +116,7 @@ with st.sidebar:
         if output_format == "Short and Crispy":
             if choice == "Match Percentage":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=MATCH_PERCENTAGE2
                 )
@@ -124,7 +124,7 @@ with st.sidebar:
 
             if choice == "Missing Skills in the Resume":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=MISSING_SKILLS2
                 )
@@ -132,7 +132,7 @@ with st.sidebar:
 
             if choice == "Grammatical error in the Resume":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=GRAMMAR_MISTAKES2
                 )
@@ -140,7 +140,7 @@ with st.sidebar:
 
             if choice == "Online Courses":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=ONLINE_COURSES2
                 )
@@ -148,7 +148,7 @@ with st.sidebar:
 
             if choice == "Salary Prediction":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=SALARY2
                 )
@@ -156,7 +156,7 @@ with st.sidebar:
 
             if choice == "Future Opportunities":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=CAREER_ADVICE2
                 )
