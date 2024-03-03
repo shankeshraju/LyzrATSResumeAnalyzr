@@ -52,6 +52,7 @@ with st.sidebar:
 
 
     submitBtn = st.button("Submit")
+    st.caption("@ShankeshRajuMS")
     llm_params = (
         {
             "model": MODEL, "temperature": temperature
