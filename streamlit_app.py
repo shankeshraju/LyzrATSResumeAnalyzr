@@ -109,7 +109,7 @@ with st.sidebar:
         if output_format == "Short and Crispy":
             if choice == "Match Percentage":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[input_file],
                     llm_params=llm_params,
                     system_prompt=MATCH_PERCENTAGE2
                 )
