@@ -34,6 +34,7 @@ if 'response' not in st.session_state:
 
 with st.sidebar:
     input_file = st.file_uploader("Upload Resume PDFs", type="pdf")
+    input_file_path = f"./{input_file.name}"
     job_description = st.text_area("Paste the Job Description")
     temperature = st.slider(label="Temperature: Default 0.5", min_value=0.1, max_value=2.0, value=0.5)
     openai.api_key = st.text_input("OpenAI API", type="password")
@@ -60,7 +61,7 @@ with st.sidebar:
         if output_format == "Detailed":
             if choice == "Match Percentage":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file.name],
+                    input_files=[input_file_path],
                     llm_params=llm_params,
                     system_prompt=MATCH_PERCENTAGE
                 )
