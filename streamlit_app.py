@@ -1,6 +1,7 @@
 from streamlit_extras.colored_header import colored_header
 from streamlit_extras.mention import mention
 from streamlit_extras.badges import badge
+from pathlib import Path
 import streamlit as st
 from lyzr import QABot
 import configparser
@@ -60,7 +61,7 @@ with st.sidebar:
         if output_format == "Detailed":
             if choice == "Match Percentage":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[input_file],
+                    input_files=[Path(input_file.name)],
                     llm_params=llm_params,
                     system_prompt=MATCH_PERCENTAGE
                 )
