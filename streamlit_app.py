@@ -55,13 +55,17 @@ with st.sidebar:
             "model": MODEL, "temperature": temperature
         }
     )
-
+    if input_file:
+        temp_dir = tempfile.mkdtemp()
+        file_path = os.path.join(temp_dir, input_file.name)
+        with open(path, "wb") as f:
+                f.write(input_file.getvalue())
     
     if submitBtn:
         if output_format == "Detailed":
             if choice == "Match Percentage":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[Path(input_file.name)],
+                    input_files=[file_path],
                     llm_params=llm_params,
                     system_prompt=MATCH_PERCENTAGE
                 )
