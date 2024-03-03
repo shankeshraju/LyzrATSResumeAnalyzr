@@ -60,7 +60,7 @@ with st.sidebar:
         if output_format == "Detailed":
             if choice == "Match Percentage":
                 qa_bot = QABot.pdf_qa(
-                    input_files=[uploaded_file.getvalue()],
+                    input_files=[input_file.getvalue()],
                     llm_params=llm_params,
                     system_prompt=MATCH_PERCENTAGE
                 )
