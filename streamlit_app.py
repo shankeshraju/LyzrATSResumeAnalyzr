@@ -7,6 +7,7 @@ from lyzr import QABot
 import configparser
 import tempfile
 import openai
+import os
 
 
 st.set_page_config(layout="wide")
