@@ -54,7 +54,7 @@ with st.sidebar:
     submitBtn = st.button("Submit")
     llm_params = (
         {
-            "model": MODEL, "temperature": temperature
+            "model": MODEL, "temperature": temperature, "api_key" = OPENAI_API_KEY
         }
     )
     if input_file:
