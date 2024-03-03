@@ -39,7 +39,7 @@ with st.sidebar:
     input_file = st.file_uploader("Upload Resume PDFs", type="pdf")
     job_description = st.text_area("Paste the Job Description")
     temperature = st.slider(label="Temperature: Default 0.5", min_value=0.1, max_value=2.0, value=0.5)
-    openai.api_key = st.text_input("OpenAI API", type="password")
+    OPENAI_API_KEY = st.text_input("OpenAI API", type="password")
     output_format = st.radio("Output Scale", ["Short and Crispy", "Detailed"])
     choice = st.radio("Select the Query", [
         "Match Percentage",
