@@ -60,7 +60,7 @@ with st.sidebar:
     if input_file:
         temp_dir = tempfile.mkdtemp()
         file_path = os.path.join(temp_dir, input_file.name)
-        with open(path, "wb") as f:
+        with open(file_path, "wb") as f:
                 f.write(input_file.getvalue())
     
     if submitBtn:
