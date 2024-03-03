@@ -174,7 +174,7 @@ with col1:
     if st.session_state.response is None:
         st.caption("Upload the resume and analyse it")
     else:
-        st.code('Output: ')
+        st.subheader('Output: ')
         st.write(st.session_state['response'].response)
 
 with col2:
