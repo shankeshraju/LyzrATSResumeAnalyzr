@@ -22,6 +22,7 @@ GRAMMAR_MISTAKES = config["DETAILED_PROMPTS"]["GRAMMAR_MISTAKES"]
 ONLINE_COURSES = config["DETAILED_PROMPTS"]["ONLINE_COURSES"]
 SALARY = config["DETAILED_PROMPTS"]["SALARY"]
 CAREER_ADVICE = config["DETAILED_PROMPTS"]["CAREER_ADVICE"]
+ADDITIONAL_POINTS = config["DETAILED_PROMPTS"]["ADDITIONAL_POINTS"]
 
 MATCH_PERCENTAGE2 = config["SHORT_PROMPTS"]["MATCH_PERCENTAGE"]
 MISSING_SKILLS2 = config["SHORT_PROMPTS"]["MISSING_SKILLS"]
@@ -29,7 +30,7 @@ GRAMMAR_MISTAKES2 = config["SHORT_PROMPTS"]["GRAMMAR_MISTAKES"]
 ONLINE_COURSES2 = config["SHORT_PROMPTS"]["ONLINE_COURSES"]
 SALARY2 = config["SHORT_PROMPTS"]["SALARY"]
 CAREER_ADVICE2 = config["SHORT_PROMPTS"]["CAREER_ADVICE"]
-
+ADDITIONAL_POINTS2 = config["SHORT_PROMPTS"]["ADDITIONAL_POINTS"]
 
 if 'response' not in st.session_state:
     st.session_state['response'] = None
@@ -44,6 +45,7 @@ with st.sidebar:
     choice = st.radio("Select the Query", [
         "Match Percentage",
         "Missing Skills in the Resume",
+        "Additional Point to add",
         "Grammatical error in the Resume",
         "Online Courses",
         "Salary Prediction",
@@ -73,6 +75,15 @@ with st.sidebar:
                     system_prompt=MATCH_PERCENTAGE
                 )
                 st.session_state['response'] = qa_bot.query(job_description)
+
+            if choice == "Additional Point to add":
+                qa_bot = QABot.pdf_qa(
+                    input_files=[file_path],
+                    llm_params=llm_params,
+                    system_prompt=ADDITIONAL_POINTS
+                )
+                st.session_state['response'] = qa_bot.query(job_description)
+
 
             if choice == "Missing Skills in the Resume":
                 qa_bot = QABot.pdf_qa(
@@ -163,6 +174,15 @@ with st.sidebar:
                 )
                 st.session_state['response'] = qa_bot.query(job_description)
 
+            if choice == "Additional Point to add":
+                qa_bot = QABot.pdf_qa(
+                    input_files=[file_path],
+                    llm_params=llm_params,
+                    system_prompt=ADDITIONAL_POINTS2
+                )
+                st.session_state['response'] = qa_bot.query(job_description)
+
+
 
 col1, col2 = st.columns([0.9, 0.1])
 
@@ -198,5 +218,3 @@ with col2:
         icon="🔗", 
         url="https://docs.lyzr.ai/lyzr-sdk/opensource/",
     )
-
-
